@@ -1,0 +1,27 @@
+Python standard
+
+pycache/
+*.pyc
+
+Virtual Environment (NEVER upload this)
+
+venv/
+env/
+
+Large Data & Models (Too big for GitHub)
+
+checkpoints/
+logs/
+processed_data_cache/
+
+Local Datasets or Results
+
+evaluation_results.csv
+*.wav
+*.mp3
+*.m4a
+
+IDE settings
+
+.vscode/
+.idea/

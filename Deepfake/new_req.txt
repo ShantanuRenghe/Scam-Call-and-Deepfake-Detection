@@ -1,0 +1,46 @@
+# --- Critical: GPU Source URL ---
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# --- Deep Learning Core (Pinned for GPU Support) ---
+# Keeping your requested versions. 
+# Note: Install these FIRST manually if pip struggles to resolve them from this file.
+torch==2.4.1+cu121
+torchaudio==2.4.1+cu121
+torchvision==0.19.1+cu121
+
+# --- Text-to-Speech (Coqui) ---
+# CRITICAL CHANGE: We install from GitHub/Main to support PyTorch 2.4+
+# The PyPI version (0.22.0) is too old for your CUDA stack.
+git+https://github.com/coqui-ai/TTS.git
+
+# --- Audio Processing ---
+librosa>=0.10.0
+soundfile>=0.12.0
+scipy>=1.11.0
+pydub>=0.25.1
+
+# --- Data Management ---
+# 'datasets' is required for Svarah. 
+# 'huggingface-hub' handles the authentication (Svarah is a gated dataset).
+datasets>=2.17.0
+huggingface-hub>=0.20.0
+pyarrow>=13.0.0
+pandas
+
+# --- CRITICAL: Numpy Compatibility ---
+# Coqui TTS fails with Numpy 2.0+. We pin to the latest 1.x version.
+numpy==1.26.4
+
+# --- Computer Vision / Utils ---
+scikit-learn
+# Headless is correct for server/script usage
+opencv-python-headless>=4.8.0
+
+# --- Visualization ---
+matplotlib
+seaborn
+tqdm
+
+# --- Optional Optimization ---
+# Deepspeed is tricky on Windows. Uncomment ONLY if you have pre-compiled wheels.
+# deepspeed>=0.10.0

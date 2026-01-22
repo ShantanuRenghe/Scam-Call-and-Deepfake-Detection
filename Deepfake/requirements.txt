@@ -1,0 +1,45 @@
+# --- Critical: GPU Source URL ---
+# This tells pip to look here for CUDA 12.1 versions
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# --- Deep Learning Core (Pinned for GPU Support) ---
+# # We force version 2.4.1 with CUDA 12.1 to fix the 'GradScaler' error
+# torch==2.4.1+cu121
+# torchaudio==2.4.1+cu121
+# torchvision==0.19.1+cu121
+
+# --- Text-to-Speech ---
+# 'TTS' is the correct package name for Coqui. 
+# It will now work because PyTorch 2.4 is installed above.
+TTS
+
+# # --- Other ML Models ---
+# tensorflow>=2.10.0
+
+# --- Audio Processing ---
+librosa>=0.10.0
+soundfile>=0.12.0
+scipy>=1.11.0
+pydub>=0.25.1
+
+# --- Data Management ---
+# Constrained slightly to prevent conflicts with TensorFlow/TTS
+datasets>=2.14.0
+huggingface-hub>=0.17.0
+pyarrow>=13.0.0
+numpy<2.0.0
+pandas
+
+# --- Computer Vision ---
+scikit-learn
+# Using headless only to save space/dependencies (unless you need GUI windows)
+opencv-python-headless>=4.8.0
+
+# --- Visualization ---
+matplotlib
+seaborn
+tqdm
+
+# --- Optional Optimization ---
+# Only uncomment this if you have the CUDA toolkit (nvcc) installed on your system.
+# deepspeed>=0.10.0

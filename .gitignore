@@ -1,0 +1,22 @@
+# Credentials & secrets
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+*.log
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
